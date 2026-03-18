@@ -1,20 +1,22 @@
-<h1 align="center">X-Raydar NLP</h1>
-
 <p align="center">
-  <a href="https://x-raydar.info"><img src="https://www.x-raydar.info/img/logos/logo-online.png" alt="X-Raydar" /></a>
+  <a href="https://x-raydar.info"><img src="assets/logo.png" alt="X-Raydar" width="320" /></a>
 </p>
 
+<h3 align="center">X-Raydar — Radiology Report Classifier</h3>
+
 <p align="center">
-  <a href="https://www.thelancet.com/journals/landig/article/PIIS2589-7500(23)00218-2/fulltext">Paper</a> &middot;
-  <a href="https://huggingface.co/dnamodel/xraydar-nlp">Model Weights</a> &middot;
-  <a href="https://x-raydar.info">Website</a>
+  <a href="https://www.thelancet.com/journals/landig/article/PIIS2589-7500(23)00218-2/fulltext"><img src="https://img.shields.io/badge/Paper-The_Lancet_Digital_Health-blue" alt="Paper" /></a>
+  <a href="https://huggingface.co/dnamodel/xraydar-nlp"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Model_Weights-yellow" alt="HuggingFace" /></a>
+  <a href="https://x-raydar.info"><img src="https://img.shields.io/badge/Website-x--raydar.info-green" alt="Website" /></a>
 </p>
+
+---
 
 NLP component of [X-Raydar](https://x-raydar.info), from ["Development and validation of open-source deep neural networks for comprehensive chest x-ray reading"](https://www.thelancet.com/journals/landig/article/PIIS2589-7500(23)00218-2/fulltext) (Cid, Macpherson et al., *The Lancet Digital Health*, 2024).
 
 A fine-tuned RoBERTa model (RoBERTaX) that classifies free-text radiology reports into **45 finding categories** using multi-label classification.
 
-> **NOTE: This is not for clinical use.**
+> **This is not for clinical use.**
 
 ## Quick Start
 
@@ -32,13 +34,11 @@ import shutil, os
 
 os.makedirs("src/model/robertax_pretrained", exist_ok=True)
 
-# Fine-tuned classifier
 shutil.copy(
     hf_hub_download("dnamodel/xraydar-nlp", "nlp/robertax1.0.pt"),
     "src/model/robertax1.0.pt"
 )
 
-# Pretrained RoBERTa base + tokenizer
 for f in ["pytorch_model.bin", "config.json", "vocab.json", "merges.txt"]:
     shutil.copy(
         hf_hub_download("dnamodel/xraydar-nlp", f"nlp/pretrained/{f}"),
@@ -51,10 +51,8 @@ for f in ["pytorch_model.bin", "config.json", "vocab.json", "merges.txt"]:
 ```python
 import predict
 
-# Build model and tokenizer
 model, tokenizer = predict.build_model()
 
-# Classify a radiology report
 report = "The heart is enlarged. There is a small left pleural effusion."
 input_ids, attention_masks = predict.doc_to_torch([report], tokenizer)
 predictions = predict.main(input_ids, attention_masks, model)
@@ -89,7 +87,9 @@ See `requirements.txt` for pinned versions.
 
 ## Related
 
-- **CV model** (chest X-ray image classifier): [x-raydar-cv](https://github.com/gmontana/xraydar-cv) &middot; [HuggingFace](https://huggingface.co/dnamodel/xraydar-cv)
+| | Repository | Weights |
+|-|-----------|---------|
+| **X-ray classifier** | [gmontana/xraydar-cv](https://github.com/gmontana/xraydar-cv) | [dnamodel/xraydar-cv](https://huggingface.co/dnamodel/xraydar-cv) |
 
 ## Citation
 
@@ -114,6 +114,4 @@ Academic research and non-commercial evaluation only. See [LICENSE](LICENSE) for
 
 ## Contact
 
-Giovanni Montana — [g.montana@warwick.ac.uk](mailto:g.montana@warwick.ac.uk)
-
-Commercial licensing — Warwick Ventures — [ventures@warwick.ac.uk](mailto:ventures@warwick.ac.uk)
+Giovanni Montana — [g.montana@warwick.ac.uk](mailto:g.montana@warwick.ac.uk) · Commercial licensing — [ventures@warwick.ac.uk](mailto:ventures@warwick.ac.uk)

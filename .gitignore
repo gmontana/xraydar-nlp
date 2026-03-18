@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+src/model/robertax1.0.pt
+src/model/robertax_pretrained/pytorch_model.bin
