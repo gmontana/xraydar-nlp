@@ -89,7 +89,7 @@ See `requirements.txt` for pinned versions.
 
 ## Related
 
-- **CV model** (chest X-ray image classifier): [x-raydar-cv](https://github.com/x-raydar/x-raydar-cv) &middot; [HuggingFace](https://huggingface.co/dnamodel/xraydar-cv)
+- **CV model** (chest X-ray image classifier): [x-raydar-cv](https://github.com/gmontana/xraydar-cv) &middot; [HuggingFace](https://huggingface.co/dnamodel/xraydar-cv)
 
 ## Citation
 
