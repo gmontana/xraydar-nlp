@@ -97,10 +97,11 @@ See `requirements.txt` for pinned versions.
 @article{cid2024development,
   title={Development and validation of open-source deep neural networks for
          comprehensive chest x-ray reading: a retrospective, multicentre study},
-  author={Cid, Yan Digilov and Macpherson, Matt and Gervais-Andre, Luc and
-          Zhu, Yinghui and Franco, Guillermo and Santeramo, Ruggiero and
-          Mudali, Divya and Wood, Orlando and Montague, Eoin and Wei, Jiefei and
-          others},
+  author={Cid, Yashin Dicente and Macpherson, Matthew and Gervais-Andre, Louise and
+          Zhu, Yuanyi and Franco, Giuseppe and Santeramo, Ruggiero and Lim, Chee and
+          Selby, Ian and Muthuswamy, Keerthini and Amlani, Ashik and Hopewell, Heath and
+          Indrajeet, Das and Liakata, Maria and Hutchinson, Charles E. and Goh, Vicky and
+          Montana, Giovanni},
   journal={The Lancet Digital Health},
   volume={6}, number={1}, pages={e44--e57},
   year={2024}, publisher={Elsevier},
